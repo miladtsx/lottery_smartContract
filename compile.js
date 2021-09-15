@@ -7,4 +7,6 @@ const rawSourceCode = fs.readFileSync(lotteryPath, 'utf8');
 
 const compileResult = solc.compile(rawSourceCode, 1);
 
+if (compileResult.errors) throw new Error('Compile Error: ', compileResult.errors[0]);
+
 module.exports = (compileResult.contracts[':Lottery']);
