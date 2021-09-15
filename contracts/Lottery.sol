@@ -32,6 +32,7 @@ contract Lottery {
         _;
     }
     
+    //TODO use Chainlink VRF https://docs.chain.link/docs/chainlink-vrf/
     function random() private view returns (uint256){
         uint256 hash = uint(keccak256(block.difficulty, now, players));
         return hash;
